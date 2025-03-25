@@ -18,6 +18,8 @@ fn main() { //fn syntax declares a new function
         .read_line(&mut guess)
         .expect("Failed to read line");
 
+    let guess: u32 = guess.trim().parse().expect("Please type a number!");  //parse the string to an unsigned 32-bit integer
+
     println!("You guessed: {}", guess);
 
         match guess.cmp(&secret_number) {
