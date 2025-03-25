@@ -1,4 +1,5 @@
 use std::io; // import the io library to manage input/output
+use std::cmp::Ordering; // import the cmp library to compare values
 use rand::Rng; // import the rand library to generate random numbers
 
 fn main() { //fn syntax declares a new function
@@ -18,4 +19,12 @@ fn main() { //fn syntax declares a new function
         .expect("Failed to read line");
 
     println!("You guessed: {}", guess);
-}
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => println!("You win!"),
+
+        }
+        
+    }
