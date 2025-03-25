@@ -1,7 +1,12 @@
 use std::io; // import the io library to manage input/output
+use rand::Rng; // import the rand library to generate random numbers
 
 fn main() { //fn syntax declares a new function
     println!("Guess the number!");
+
+    let secret_number= rand::thread_rng().gen_range(1..=100); //generate a random number between 1 and 100
+
+    println!("The secret number is: {secret_number}"); //display the secret number to the screen - to delete in the future after dev
 
     println!("Please input your guess.");
     // println! is a macro that prints a string to the screen
